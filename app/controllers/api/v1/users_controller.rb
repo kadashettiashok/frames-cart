@@ -1,4 +1,4 @@
-module API
+module Api
     module V1
         class UsersController < ApplicationController
 
@@ -12,7 +12,7 @@ module API
             private
 
             def user_params
-                params.require(:user).permit(:name, :email, :password, :role, :currency)
+                params.permit(:name, :email, :password, :role, :currency)
             end
         end
     end
