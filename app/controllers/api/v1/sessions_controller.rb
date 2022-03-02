@@ -6,7 +6,7 @@ module Api
         if user&.valid_password?(params[:password])
           render json: user.as_json(only: %i[authentication_token email]), status: :created
         else
-          head(:unauthorised)
+          render json: { message: 'unauthorized'}
         end
       end
     end

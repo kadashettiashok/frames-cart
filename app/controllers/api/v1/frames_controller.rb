@@ -3,24 +3,24 @@ module Api
         class FramesController < ApplicationController
 
             def index
-                if current_user.role == "admin"
+                if current_user.admin?
                     frames = Frame.order(:id)
                 else
-                    frames = Frame.where(status: "active")
+                    byebug
+                    frames = Frame.active
                 end
-                render json: {frame: frames }, status: 200
+                render json: {frames: frames }, status: 200
             end
 
             def create
                 if current_user.role == "admin"
                     frame = Frame.new(frame_params)
                     if frame.save
-                        message = frame
+                        render json: {frame: frame}, status: :created
                     end
                 else
-                    message = "user not allowd to create"
+                    render json: {message: "user is not allowd to create"}, status: 401
                 end
-                render json: {frame: message }, status: :created
             end
 
             private

@@ -8,14 +8,11 @@ module Api
 
             def create
                 if current_user.role == "admin"
-                    lense = Lense.new(lens_params)
-                    if lense.save
-                        message = lense
-                    end
+                    lense = Lense.create!(lens_params)
+                    render json: {lense: lense }, status: :created
                 else
-                    message = "user not allowd to create"
+                    render json: {message: "user is not allowd to create" }, status: 401
                 end
-                render json: {lense: message }, status: :created   
             end
 
             private
