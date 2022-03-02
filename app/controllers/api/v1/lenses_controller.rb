@@ -2,14 +2,20 @@ module Api
     module V1
         class LensesController < ApplicationController
             def index
-                lenses = Lense.all
+                lenses = Lense.order(:id)
+                render json: {status: "success", lenses: lenses}
             end
 
             def create
-                lense = Lense.new(lens_params)
-                if lense.save
-                    render json: {status: "created", data: lense}, status: 200
-                end   
+                if current_user.role == "admin"
+                    lense = Lense.new(lens_params)
+                    if lense.save
+                        message = lense
+                    end
+                else
+                    message = "user not allowd to create"
+                end
+                render json: {lense: message }, status: :created   
             end
 
             private
