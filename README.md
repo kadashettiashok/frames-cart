@@ -1,24 +1,49 @@
-# README
+# Frames-cart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Getting Started
 
-Things you may want to cover:
+Install required dependency
 
-* Ruby version
+```
+bundle install
+```
+Setup `pgsql` datebase
+```
+  rake db:setup
+  rake db:migarte
+```
+Start your project locally using `rails`
+```
+rails s
+```
 
-* System dependencies
 
-* Configuration
+## Technologies
 
-* Database creation
+- `ruby-on-rails`: Back-end framework
+-  `pgsql`: Database
+- `devise-gem` : For authorization.
+- `simple-token-authentication-gem` : For token based authentication
+- `rspec-gem` : To test our Controller, Model.
+- `rubo-cop-gem` : Code Format (unify the code format)
 
-* Database initialization
+## API
+# User Creation
 
-* How to run the test suite
+    Run rails c in terminal from project root folder
 
-* Services (job queues, cache servers, search engines, etc.)
+     
+  #### Admin
+  ```
+       User.create!(name:”Ashok”,email:”ashok@gmail.com”,password:”123456”,role:”admin”,currency:”USD”)
+ ```
 
-* Deployment instructions
+ 
+  #### User 
+  ```
+      User.create!(name:”Ashok1”,email:”ashok1@gmail.com”,password:”123456”,role:”user”,currency:”EUR”)
+ ```
 
-* ...
+ # User login
+ 
+ 
