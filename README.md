@@ -86,7 +86,7 @@ rails s
 
  
   #### without stock
-  ![image](https://user-images.githubusercontent.com/100595515/156374574-51fe5241-e96e-43fd-b9a4-17296bf76f7e.png)
+  ![image](https://user-images.githubusercontent.com/100595515/156378449-9de8e8b3-4b11-4369-a04c-0c2e44747e18.png)
 
   
   
