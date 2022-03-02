@@ -9,8 +9,8 @@ bundle install
 ```
 Setup `pgsql` datebase
 ```
-  rake db:setup
-  rake db:migarte
+ rake db:setup
+ rake db:migarte
 ```
 Start your project locally using `rails`
 ```
