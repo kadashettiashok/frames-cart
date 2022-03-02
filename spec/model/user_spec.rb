@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  subject {
+  subject do
     User.new(name: 'Abcd', email: 'abcd@gmail.com', password: '123456', role: 'admin', currency: "usd")
-  }
+  end
 
   it 'name shoud present' do
-    user = User.new(name: 'Abcd', email: 'abcd@gmail.com', password: '123456', role: 'user', currency:"usd")
+    user = User.new(name: 'Abcd', email: 'abcd@gmail.com', password: '123456', role: 'user', currency: "usd")
     expect(user.name?).to eq(true)
   end
 
@@ -25,10 +25,10 @@ describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-#   describe 'validations' do
-#     it { is_expected.to validate_presence_of :name }
-#     it { is_expected.to validate_presence_of :email }
-#     it { is_expected.to validate_presence_of :password }
-#     it { is_expected.to validate_presence_of :role }
-#   end
+  #   describe 'validations' do
+  #     it { is_expected.to validate_presence_of :name }
+  #     it { is_expected.to validate_presence_of :email }
+  #     it { is_expected.to validate_presence_of :password }
+  #     it { is_expected.to validate_presence_of :role }
+  #   end
 end

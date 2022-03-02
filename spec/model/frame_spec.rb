@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe Frame, type: :model do
-  subject {
+  subject do
     Frame.new(name: 'Frame', description: 'description', status: 'active', stock: 5, price: 20)
-  }
+  end
 
   it 'name shoud present' do
     frame = Frame.new(name: 'Frame', description: 'description', status: 'active', stock: 5, price: 20)

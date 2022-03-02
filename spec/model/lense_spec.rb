@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe Lense, type: :model do
-  subject {
+  subject do
     Lense.new(color: nil, description: 'description', prescription_type: 'fashion', stock: 5, price: 20)
-  }
+  end
 
   it 'color shoud present' do
-    lense =  Lense.new(color: 'Frame', description: 'description', prescription_type: 'fashion', stock: 5, price: 20)
+    lense = Lense.new(color: 'Frame', description: 'description', prescription_type: 'fashion', stock: 5, price: 20)
     expect(lense.color?).to eq(true)
   end
 
@@ -20,6 +20,6 @@ describe Lense, type: :model do
   end
 
   it 'stock should not be zero' do
-    expect(subject.stock == 0 ).to eq(false)
+    expect(subject.stock == 0).to eq(false)
   end
 end
